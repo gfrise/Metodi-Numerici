@@ -1,16 +1,12 @@
 #include<stdio.h>
+#include<math.h>
 
-double exponentialRandom(double lambda){
-    double u = (double)rand()/RAND_MAX;
-    return -log(u)/lambda;
+double expRand(double lambda){ // o 1/tau 
+    return -log((double)rand()/RAND_MAX)/lambda;
 }
 
-int main(){
-    double lambda = 1.0; // o 1/tau;
-    int n = 50;
-
-    printf("dist exp lambda = %.2f\n",lambda);
-    for(int i =0;i<n;i++){
-        printf("evento %d: %.4f\n",i+1,exponentialRandom(lambda));
+int main() {
+    for(int i=0;i<50;i++){
+        printf("evento %d: %.4f\n",i,expRand(1.0));
     }
 }
