@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<math.h>
+#define U ((double)rand()/RAND_MAX)
+
+double expo(double lambda){
+    return -log(U)/lambda;
+}
+
+int poisson(double mu){
+    double pb=exp(-mu),acc=pb;
+    int n = 0;
+    while(U>acc){
+        pb*=mu/++n;
+        acc+=pb;
+    }
+    return n;
+}
+
+int main(){
+    for(int i=0;i<10;i++) 
+    printf("exp %d: %.4f\tpoisson %d: %d\n",i+1,expo(1.),i+1,poisson(3));
+}
