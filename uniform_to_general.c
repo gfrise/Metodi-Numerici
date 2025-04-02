@@ -22,9 +22,26 @@ double sumUniforms(double mu,double sigma){
     return mu+sigma*(sum-6.0);
 }
 
+void rejection_sampling(double *x, int n) {
+    int i = 0;
+    double r1;
+    while (i < n) {
+        r1 = 12 * U - 6;  
+        if (U < exp(-r1 * r1 / 2))
+            x[i++] = r1;
+    }
+}
+
 int main(){
     for(int i=0;i<10;i++){
         printf("exp %d:%f\tpoisson %d:%d\tnormal %d:%f\n",
         i+1,expo(1),i+1,poisson(3),i+1,sumUniforms(0,1));
+    }
+    int n = 20;
+    double x[n];
+    rejection_sampling(x, n);
+
+    for (int i = 0; i < n; i++) {
+        printf("Rejection %d: %f\n", i + 1, x[i]);
     }
 }
