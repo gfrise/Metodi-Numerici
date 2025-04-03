@@ -1,12 +1,12 @@
 #include<stdio.h>
 
-double spezzata(double a, double h, double l, int n){
+double spezzata(double a, double h, double I, int n){
     int i;
-    l /= 2.;
+    I = (f(a)+f(b))/2;
     for(i=1;i<n;i++){
         l += f(a+i*h);
     }
-    return l*h;
+    return I*h;
 }
 
 double simpson(double a, double h, double l, int n){
