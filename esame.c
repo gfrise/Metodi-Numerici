@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <math.h>
-#define NMAX 1000
 
 double f(double t, double u) {
     return sin(log(1.26 * t) + u);
@@ -8,7 +7,7 @@ double f(double t, double u) {
 
 void ab(double t0, double u0, double tf, double eps, double h) {
     int n = (int)((tf-t0)/h);
-    double t[NMAX], u[NMAX];
+    double t[n], u[n];
     
     t[0] = t0;
     u[0] = u0;
