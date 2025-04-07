@@ -31,7 +31,5 @@ void ab(double t0, double u0, double tf, double eps, double h) {
 }
 
 int main(){
-    double t0 = 1.0, tf = 10.0, u0 = 0.0;
-    double h = 0.1, eps = 1e-6;
-    ab(t0, u0, tf, eps, h);
+    ab(1,0,10,1.e-6,0.1);
 }
