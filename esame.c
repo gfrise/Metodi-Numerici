@@ -1,3 +1,4 @@
+// mkdir ll cd cd .. nedit& xmgrace -lm area.c gcc -o area.exe area.c ./area.exe touch area.c agr
 #include <stdio.h>
 #include <math.h>
 
